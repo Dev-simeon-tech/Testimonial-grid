@@ -1,0 +1,174 @@
+:root{
+    /* primary */
+    --Moderate-violet: hsl(263, 55%, 52%) ;
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%) ;
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%) ;
+    --White: hsl(0, 0%, 100%);
+
+    /* neutral */
+    --Light-gray: hsl(0, 0%, 81%); 
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+    --font: 'Barlow Semi Condensed', sans-serif;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background: var(--Light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* utilities */
+.flex{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.bg-purple{
+    background: var(--Moderate-violet);
+    color: var(--White);
+
+}
+.greyish-blue{
+    background: var(--Very-dark-grayish-blue);
+    color: var(--White);
+
+}
+.blackish-blue{
+    background: var(--Very-dark-blackish-blue);
+    color: var(--White);
+
+}
+.bg-white{
+    background: var(--White);
+    color: var(--Very-dark-grayish-blue);
+}
+.name-grey{
+    color: var(--Light-grayish-blue);
+}
+.bg-white p{
+    color: rgba(72, 85, 106,0.6) !important;
+}
+.light-grey{
+    background: var(--Light-gray);
+}
+
+
+/* main styles */
+.testimonal-grid{
+    width: min(95%, 70rem);
+    margin-inline: auto;
+    padding-block: 2rem;
+    display: grid;
+    gap: 2rem;
+}
+.testimonal{
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem rgba(72, 85, 106,0.25);
+    
+}
+.testimonal img{
+    border-radius: 50%;
+    width: 1.75rem;
+}
+.testimonal.quote{
+    background-image: url(images/bg-pattern-quotation.svg) ;
+    background-position: top right 10%;
+    background-repeat: no-repeat;
+}
+.testimonal:nth-child(4) img{
+    border: 2px solid var(--Moderate-violet);
+}
+.testimonal h2{
+    font-size: 14px;
+    font-weight: 600;
+}
+.profile p{
+    color: rgba(236, 242, 248,0.5);
+    font-size: 12px;
+}
+.testimonal:first-of-type img{
+    border: 2px solid var(--Light-gray);
+}
+.content{
+    padding-top: 18px;
+}
+.content h3{
+  font-size: 18px; 
+}
+.content p{
+    color:rgba(236, 242, 248,0.5) ;
+    padding-top: 10px;
+    font-size: 14px;
+}
+/* grid system */
+@media(min-width:869px){
+    .testimonal-grid{
+        
+        grid-template-columns: repeat(4,1fr);
+    }
+    .span-2{
+        grid-column: span 2;
+    }
+    .adjust-grid{
+        grid-column: 4 / 5;
+        grid-row: 1/3;
+    }
+}
